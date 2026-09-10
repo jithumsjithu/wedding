@@ -1,0 +1,1290 @@
+/*
+* Template Name: UntreeStore
+* Template Author: Untree.co
+* Author URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #f1f5e7;
+        color: #294029;
+        overflow-x: hidden;
+      }
+
+      /* =========================
+       HERO IMAGE
+       ========================= */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: clamp(280px, 43vw, 395px);
+        overflow: hidden;
+        background: #dfe7cf;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        transform: scale(1.01);
+      }
+
+      /* White/cream fade exactly at the bottom of the photo */
+      .hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 34%;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          rgba(241, 245, 231, 0) 0%,
+          rgba(241, 245, 231, 0.25) 25%,
+          rgba(241, 245, 231, 0.78) 68%,
+          #f1f5e7 100%
+        );
+      }
+
+      /* =========================
+       INVITATION CONTENT
+       ========================= */
+      .invitation {
+        position: relative;
+        min-height: 560px;
+        margin-top: -1px;
+        padding: 50px 20px 90px;
+        text-align: center;
+        background:
+          radial-gradient(
+            circle at 30% 68%,
+            rgba(255, 255, 255, 0.45),
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at 75% 35%,
+            rgba(255, 255, 255, 0.3),
+            transparent 20%
+          ),
+          #f1f5e7;
+        overflow: hidden;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(9px, 0.75vw, 13px);
+        font-weight: 500;
+        letter-spacing: clamp(4px, 0.45vw, 8px);
+        color: #69705a;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .names {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        color: #30472f;
+        line-height: 0.82;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      .name {
+        display: block;
+        font-size: clamp(72px, 8.2vw, 145px);
+        margin-top: 20px;
+      }
+
+      .ampersand {
+        display: block;
+        margin: 12px 0 8px;
+        color: #c79a2f;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(54px, 5.5vw, 92px);
+        font-weight: 500;
+        line-height: 0.7;
+      }
+
+      /* Small decorative floating flowers */
+      .flower {
+        position: absolute;
+        z-index: 1;
+        width: 27px;
+        height: 27px;
+        opacity: 0.45;
+        transform: rotate(15deg);
+      }
+
+      .flower::before,
+      .flower::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        background: #b6d08c;
+        border-radius: 50%;
+        box-shadow:
+          0 -8px 0 #b6d08c,
+          0 8px 0 #b6d08c,
+          8px 0 0 #b6d08c,
+          -8px 0 0 #b6d08c;
+      }
+
+      .flower::after {
+        inset: 11px;
+        background: #d4dfb5;
+        box-shadow: none;
+      }
+
+      .flower.one {
+        top: 50px;
+        right: 6%;
+      }
+
+      .flower.two {
+        top: 150px;
+        right: 18%;
+        transform: scale(0.8) rotate(30deg);
+      }
+
+      .flower.three {
+        top: 280px;
+        left: 38%;
+        transform: scale(0.65) rotate(-15deg);
+        opacity: 0.22;
+      }
+
+      /* Soft golden decorative glow */
+      .glow {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        left: 39%;
+        top: 355px;
+        background: radial-gradient(
+          circle,
+          rgba(238, 205, 106, 0.35),
+          rgba(238, 205, 106, 0) 70%
+        );
+        filter: blur(4px);
+        pointer-events: none;
+      }
+
+      /* =========================
+       OPTIONAL DETAILS SECTION
+       ========================= */
+      .details {
+        display: none;
+      }
+
+      /* =========================
+       TABLET
+       ========================= */
+      @media (max-width: 900px) {
+        .hero {
+          height: 330px;
+        }
+
+        .invitation {
+          padding-top: 42px;
+          min-height: 500px;
+        }
+
+        .name {
+          font-size: clamp(68px, 12vw, 110px);
+        }
+      }
+
+      /* =========================
+       MOBILE
+       ========================= */
+      @media (max-width: 600px) {
+        .hero {
+          height: 245px;
+        }
+
+        .hero-image {
+          object-position: center top;
+        }
+
+        .hero::after {
+          height: 38%;
+        }
+
+        .invitation {
+          padding: 34px 15px 70px;
+          min-height: 430px;
+        }
+
+        .eyebrow {
+          font-size: 8px;
+          letter-spacing: 3px;
+          margin-bottom: 18px;
+        }
+
+        .name {
+          font-size: clamp(58px, 17vw, 90px);
+          line-height: 0.88;
+        }
+
+        .ampersand {
+          font-size: 54px;
+          margin: 10px 0 7px;
+        }
+
+        .flower.one {
+          right: 5%;
+          top: 35px;
+          transform: scale(0.75);
+        }
+
+        .flower.two {
+          right: 12%;
+          top: 130px;
+          transform: scale(0.55);
+        }
+
+        .glow {
+          left: 42%;
+          top: 290px;
+          width: 65px;
+          height: 65px;
+        }
+      }
+
+      /* =========================
+       VERY SMALL PHONES
+       ========================= */
+      @media (max-width: 380px) {
+        .hero {
+          height: 215px;
+        }
+
+        .invitation {
+          padding-top: 30px;
+        }
+
+        .eyebrow {
+          letter-spacing: 2.5px;
+          font-size: 7px;
+        }
+
+        .name {
+          font-size: 58px;
+        }
+
+        .ampersand {
+          font-size: 46px;
+        }
+      }
+      /* .coupleWrd {
+        margin-top: 10rem;
+      } */
+
+      .quote {
+        position: relative;
+        max-width: 520px;
+        margin-left: auto;
+        text-align: right;
+        margin-top: 3rem;
+      }
+      .quote-mark {
+        font-family: Georgia, serif;
+        font-size: 60px;
+        line-height: 0;
+        display: block;
+        margin-bottom: 25px;
+      }
+      .quote p {
+        font-family: Georgia, serif;
+        font-size: 22px;
+        line-height: 1.8;
+        font-style: italic;
+        margin: 0;
+      }
+      .quote-mark.closing {
+        margin-top: 30px;
+        margin-bottom: 0;
+      } /* Groom Name */
+      .groom-name {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 35px;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+      .groom-name .line {
+        width: 50px;
+        height: 1px;
+        background: #999;
+      } /* Mobile */
+      @media (max-width: 768px) {
+        .groom-section {
+          flex-direction: column;
+        }
+        .groom-image,
+        .groom-content {
+          width: 100%;
+        }
+        .groom-image img {
+          height: 450px;
+        }
+        .groom-content {
+          padding: 50px 25px;
+        }
+        .quote {
+          margin: 0 auto;
+          text-align: center;
+        }
+        .groom-name {
+          justify-content: center;
+          margin-top: 30px;
+          margin-bottom: 10px;
+        }
+        .quote p {
+          font-size: 19px;
+          line-height: 1.7;
+        }
+        .quote-mark {
+          display: none;
+        }
+      }
+      /* =========================
+       COUNTDOWN SECTION
+    ========================= */
+
+      .countdown-section {
+        /* min-height: 400px;
+
+        display: flex; */
+        justify-content: center;
+        align-items: center;
+
+        padding: 30px 20px;
+
+        /* background: #2d4354; */
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        gap: 32px;
+      }
+
+      /* =========================
+       EACH ITEM
+    ========================= */
+
+      .countdown-item {
+        width: 88px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* =========================
+       NUMBER BOX
+    ========================= */
+
+      .number-box {
+        position: relative;
+
+        width: 88px;
+        height: 88px;
+
+        background: #10a994;
+
+        border-radius: 12px;
+
+        overflow: hidden;
+
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /*
+       Horizontal line across number
+    */
+
+      .number-box::before {
+        content: "";
+
+        position: absolute;
+
+        left: -5px;
+        right: -5px;
+
+        top: 50%;
+
+        height: 3px;
+
+        transform: translateY(-50%);
+
+        background: #2d4354;
+
+        z-index: 10;
+      }
+
+      /*
+       Number viewport
+    */
+
+      .number-window {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+      }
+
+      /* =========================
+       NUMBER
+    ========================= */
+
+      .number {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+        font-size: 62px;
+
+        line-height: 1;
+
+        font-weight: 400;
+
+        color: #ffffff;
+
+        letter-spacing: -2px;
+
+        transform: translateY(0);
+
+        transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      /* =========================
+       LABEL
+    ========================= */
+
+      .label {
+        margin-top: 20px;
+
+        font-family: "Arial Narrow", Arial, sans-serif;
+
+        font-size: 13px;
+
+        font-weight: 400;
+
+        letter-spacing: 0.5px;
+
+        text-transform: uppercase;
+
+        color: #718696;
+      }
+
+      /* =========================
+       SWIPE ANIMATION
+    ========================= */
+
+      .number.swipe-up {
+        animation: swipeUp 0.55s ease-in-out;
+      }
+
+      @keyframes swipeUp {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        45% {
+          transform: translateY(-70px);
+          opacity: 0;
+        }
+
+        46% {
+          transform: translateY(70px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* =========================
+       MOBILE
+    ========================= */
+      /* =========================================
+   COUNTDOWN - MOBILE RESPONSIVE
+========================================= */
+
+      @media (max-width: 768px) {
+        .countdown-section {
+          width: 100%;
+          padding: 0px;
+          overflow: hidden;
+        }
+
+        .countdown {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+        }
+
+        /* Date text */
+        .love-text {
+          width: 100%;
+          text-align: center;
+          font-size: 17px;
+          line-height: 1.6;
+          margin: 0 0 5px;
+        }
+
+        /* Infinity symbol */
+        .rings {
+          width: 100%;
+          text-align: center;
+          font-size: 28px;
+          margin: 0 0 15px;
+        }
+
+        /* Each countdown item */
+        .countdown-item {
+          flex: 0 0 calc(25% - 10px);
+          min-width: 0;
+          text-align: center;
+        }
+
+        /* Number container */
+        .number-box {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          height: 75px;
+        }
+
+        .number-window {
+          width: 100%;
+          max-width: 72px;
+          height: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .number {
+          font-size: 70px;
+          line-height: 1;
+        }
+
+        /* Labels */
+        .label {
+          margin-top: 8px;
+          font-size: 12px;
+          letter-spacing: 1px;
+          white-space: nowrap;
+        }
+      }
+
+      /* =========================================
+   SMALL PHONES
+========================================= */
+
+      @media (max-width: 480px) {
+        .countdown-section {
+          padding: 35px 10px;
+        }
+
+        .countdown {
+          gap: 7px;
+        }
+
+        .love-text {
+          font-size: 15px;
+          line-height: 1.5;
+        }
+
+        .rings {
+          font-size: 25px;
+          margin-bottom: 12px;
+          margin-top: 5px;
+        }
+
+        .countdown-item {
+          flex: 0 0 calc(25% - 6px);
+        }
+
+        .number-window {
+          max-width: 62px;
+          height: 62px;
+        }
+
+        .number {
+          font-size: 24px;
+        }
+
+        .label {
+          font-size: 10px;
+          letter-spacing: 0.5px;
+          margin-top: 7px;
+        }
+      }
+
+      /* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+      @media (max-width: 360px) {
+        .countdown {
+          gap: 5px;
+        }
+
+        .countdown-item {
+          flex: 0 0 calc(25% - 4px);
+        }
+
+        .number-window {
+          max-width: 55px;
+          height: 55px;
+        }
+
+        .number {
+          font-size: 21px;
+        }
+
+        .label {
+          font-size: 9px;
+        }
+      }
+
+      .wedding-intro {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+        /* padding: 80px 20px; */
+        overflow: hidden;
+      }
+
+      /* Decorative line */
+
+      .decor-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        /* margin-bottom: 22px; */
+      }
+
+      .decor-line span {
+        width: 80px;
+        height: 1px;
+        background: #c9ad91;
+
+        transform: scaleX(0);
+        animation: lineGrow 1.2s ease forwards;
+      }
+      .decor-lines {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        /* margin-bottom: 22px; */
+      }
+      .decor-lines span {
+        width: 200px;
+        height: 1px;
+        background: #c9ad91;
+
+        transform: scaleX(0);
+        animation: lineGrow 1.2s ease forwards;
+      }
+
+      .decor-line i {
+        font-size: 18px;
+        color: #b38b6d;
+        font-style: normal;
+
+        animation: heartBeat 1.8s ease-in-out infinite;
+      }
+
+      /* Small heading */
+
+      .eyebrow {
+        margin: 0;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+
+        letter-spacing: 5px;
+
+        color: #9b8066;
+
+        opacity: 0;
+        transform: translateY(-15px);
+
+        animation: fadeDown 1.2s ease 0.2s forwards;
+      }
+
+      /* Main Text */
+
+      .forever-text {
+        margin: 22px 0 15px;
+
+        font-family: "Playfair Display", Georgia, serif;
+
+        font-size: clamp(32px, 5vw, 58px);
+        font-weight: 400;
+
+        line-height: 1.2;
+
+        color: #40352f;
+
+        opacity: 0;
+        transform: translateY(30px);
+
+        animation: textReveal 1.4s ease 0.5s forwards;
+      }
+
+      /* Highlighted word */
+
+      .forever-text span {
+        color: #a77c5c;
+        font-style: italic;
+
+        position: relative;
+      }
+
+      /* Animated underline */
+
+      .forever-text span::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -6px;
+
+        width: 100%;
+        height: 1px;
+
+        background: #c5a184;
+
+        transform: scaleX(0);
+        transform-origin: left;
+
+        animation: underline 1s ease 1.7s forwards;
+      }
+
+      /* Description */
+
+      .love-text {
+        font-family: "Cormorant Garamond", Georgia, serif;
+
+        font-size: 20px;
+        line-height: 1.8;
+        margin-top: 15px;
+        color: #766b64;
+
+        opacity: 0;
+        transform: translateY(20px);
+
+        animation: textReveal 1.2s ease 1s forwards;
+      }
+
+      /* Decorative symbol */
+
+      .rings {
+        /* margin-top: 25px; */
+
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 34px;
+
+        color: #b38b6d;
+
+        opacity: 0;
+
+        animation:
+          fadeIn 1s ease 1.8s forwards,
+          float 3s ease-in-out 2.8s infinite;
+      }
+
+      /* ==========================
+           ANIMATIONS
+        ========================== */
+
+      @keyframes textReveal {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes lineGrow {
+        from {
+          transform: scaleX(0);
+        }
+
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes underline {
+        from {
+          transform: scaleX(0);
+        }
+
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.25);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* ==========================
+           MOBILE
+        ========================== */
+
+      @media (max-width: 600px) {
+        .wedding-intro {
+          /* padding: 55px 15px; */
+        }
+
+        .decor-line span {
+          width: 45px;
+        }
+
+        .eyebrow {
+          font-size: 11px;
+          letter-spacing: 3px;
+        }
+
+        .forever-text {
+          font-size: 34px;
+        }
+
+        .love-text {
+          font-size: 17px;
+        }
+      }
+
+      .events-section {
+        width: 100%;
+        padding: 60px 5%;
+        overflow: hidden;
+      }
+
+      .events-container {
+        max-width: 622px;
+        margin: 0 auto;
+
+        display: grid;
+
+        /* ONLY TWO BOXES PER ROW */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 30px;
+      }
+
+      /* =========================
+           EVENT CARD
+        ========================= */
+
+      .event-card {
+        position: relative;
+
+        min-height: 435px;
+
+        padding: 38px 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        border: 1px solid #dfcf9b;
+        border-radius: 18px;
+
+        background:
+          radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 255, 255, 0.55),
+            transparent 55%
+          ),
+          linear-gradient(135deg, #f7edcf, #f4efd9);
+
+        box-shadow: 0 18px 35px rgba(89, 94, 69, 0.12);
+
+        overflow: hidden;
+      }
+
+      /* Second card slightly green */
+      .event-card:nth-child(2) {
+        background:
+          radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 255, 255, 0.55),
+            transparent 55%
+          ),
+          linear-gradient(135deg, #edf0dc, #f4f0d9);
+      }
+
+      /* =========================
+           EVENT TITLE
+        ========================= */
+
+      .event-title {
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 38px;
+        line-height: 1.1;
+
+        font-weight: 600;
+
+        color: #3f5137;
+
+        margin-bottom: 12px;
+      }
+
+      /* =========================
+           DATE / TIME
+        ========================= */
+
+      .event-date,
+      .event-time {
+        font-size: 15px;
+        line-height: 1.7;
+
+        color: #737765;
+      }
+
+      .event-time {
+        margin-top: 2px;
+      }
+
+      /* =========================
+           LABEL
+        ========================= */
+
+      .event-label {
+        margin-top: 20px;
+        margin-bottom: 7px;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        color: #5e704c;
+      }
+
+      /* =========================
+           EVENT DETAILS
+        ========================= */
+
+      .event-details {
+        font-size: 15px;
+        line-height: 1.9;
+
+        color: #707365;
+      }
+
+      /* =========================
+           MAP LINK
+        ========================= */
+
+      .map-link {
+        display: inline-block;
+
+        margin-top: 30px;
+        padding-bottom: 10px;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        text-decoration: none;
+
+        color: #4f6347;
+
+        border-bottom: 1px solid #71815b;
+
+        transition: all 0.3s ease;
+      }
+
+      .map-link:hover {
+        color: #2f412c;
+        border-bottom-color: #2f412c;
+      }
+
+      /* =========================
+           DECORATION
+        ========================= */
+
+      .event-card::before {
+        content: "";
+
+        position: absolute;
+
+        width: 130px;
+        height: 130px;
+
+        left: 50%;
+        bottom: -80px;
+
+        transform: translateX(-50%);
+
+        border-radius: 50%;
+
+        background: rgba(218, 222, 179, 0.35);
+
+        filter: blur(5px);
+      }
+
+      /* =========================
+           TABLET
+        ========================= */
+
+      @media (max-width: 900px) {
+        .events-section {
+          padding: 45px 4%;
+        }
+
+        .events-container {
+          gap: 20px;
+        }
+
+        .event-card {
+          min-height: 420px;
+          padding: 32px 22px;
+        }
+
+        .event-title {
+          font-size: 34px;
+        }
+      }
+
+      /* =========================
+           MOBILE
+        ========================= */
+
+      @media (max-width: 600px) {
+        .vertical-line {
+          display: none;
+        }
+
+        .events-section {
+          padding: 35px 18px;
+          width: 100%;
+          max-width: 360px;
+          margin: 0 auto;
+        }
+
+        .events-container {
+          /* ONE BOX PER ROW ON MOBILE */
+          grid-template-columns: 1fr;
+
+          gap: 22px;
+
+          width: 100%;
+        }
+
+        .event-card {
+          width: 100%;
+          min-height: auto;
+
+          padding: 32px 20px 35px;
+
+          border-radius: 16px;
+        }
+
+        .event-title {
+          font-size: 35px;
+        }
+
+        .event-date,
+        .event-time,
+        .event-details {
+          font-size: 14px;
+        }
+
+        .event-label {
+          margin-top: 18px;
+          letter-spacing: 2.5px;
+        }
+
+        .map-link {
+          margin-top: 25px;
+        }
+      }
+
+      /* =========================
+           SMALL PHONES
+        ========================= */
+
+      @media (max-width: 380px) {
+        .events-section {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .event-card {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .event-title {
+          font-size: 32px;
+        }
+        .vertical-line {
+          display: none;
+        }
+      }
+      .vertical-line {
+        width: 2px;
+        height: 160px;
+        background-color: #71815b;
+      }
+
+body {
+  overflow-x: hidden;
+  position: relative; }
+
+
+.we-help-section {
+  padding: 2rem 0; 
+}
+  .we-help-section .imgs-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[27];
+    grid-template-columns: repeat(27, 1fr);
+    position: relative; }
+    .we-help-section .imgs-grid:before {
+      position: absolute;
+      content: "";
+      width: 255px;
+      height: 217px;
+      background-image: url("../images/dots-green.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      -webkit-transform: translate(-40%, -40%);
+      -ms-transform: translate(-40%, -40%);
+      transform: translate(-40%, -40%);
+      z-index: -1; }
+    .we-help-section .imgs-grid .grid {
+      position: relative; }
+      .we-help-section .imgs-grid .grid img {
+        border-radius: 20px;
+        max-width: 100%; }
+      .we-help-section .imgs-grid .grid.grid-1 {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 18;
+        grid-column: 1 / span 18;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 27;
+        grid-row: 1 / span 27; }
+      .we-help-section .imgs-grid .grid.grid-2 {
+        -ms-grid-column: 19;
+        -ms-grid-column-span: 27;
+        grid-column: 19 / span 27;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 5;
+        grid-row: 1 / span 5;
+        padding-left: 20px; }
+      .we-help-section .imgs-grid .grid.grid-3 {
+        -ms-grid-column: 14;
+        -ms-grid-column-span: 16;
+        grid-column: 14 / span 16;
+        -ms-grid-row: 6;
+        -ms-grid-row-span: 27;
+        grid-row: 6 / span 27;
+        padding-top: 20px; }
