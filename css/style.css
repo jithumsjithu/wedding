@@ -1559,3 +1559,9 @@ body {
 
     }
 
+@media (max-width: 400px) {
+    .wedding-content {
+        justify-content: flex-start;
+        padding: 44px 10px !important;
+    }
+}
