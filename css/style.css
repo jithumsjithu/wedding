@@ -596,7 +596,7 @@
           width: 100%;
           display: flex;
           justify-content: center;
-          height: 75px;
+          height: 68px;
         }
 
         .number-window {
@@ -1041,7 +1041,7 @@
 
       .event-date,
       .event-time {
-        font-size: 15px;
+        font-size: 21px;
         line-height: 1.7;
 
         color: #737765;
@@ -1059,7 +1059,7 @@
         margin-top: 20px;
         margin-bottom: 7px;
 
-        font-size: 12px;
+        font-size: 17px;
         font-weight: 600;
 
         letter-spacing: 3px;
@@ -1073,7 +1073,7 @@
         ========================= */
 
       .event-details {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.9;
 
         color: #707365;
@@ -1089,7 +1089,7 @@
         margin-top: 30px;
         padding-bottom: 10px;
 
-        font-size: 12px;
+        font-size: 17px;
         font-weight: 600;
 
         letter-spacing: 3px;
@@ -1294,4 +1294,268 @@ body {
         padding-top: 20px; }
 
 
+
+
+
+        
+ .little-ones-section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+
+      padding: 22px 20px 45px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 0% 80%,
+          rgba(255, 255, 255, 0.85),
+          transparent 22%
+        ),
+        radial-gradient(
+          circle at 100% 30%,
+          rgba(255, 255, 255, 0.55),
+          transparent 25%
+        ),
+        #f4f5e8;
+
+      overflow: hidden;
+    }
+
+    /* =========================================
+       SMALL TOP TEXT
+    ========================================= */
+
+    .little-ones-subtitle {
+      margin-top: 0;
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+
+      letter-spacing: 6px;
+      text-transform: uppercase;
+
+      color: #667653;
+
+      text-align: center;
+    }
+
+    /* =========================================
+       MAIN TITLE
+    ========================================= */
+
+    .little-ones-title {
+      margin-top: 7px;
+
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 49px;
+      font-weight: 600;
+      font-style: italic;
+
+      line-height: 1.05;
+
+      color: #405437;
+
+      text-align: center;
+    }
+
+    /* =========================================
+       DECORATIVE LINE
+    ========================================= */
+
+    .little-ones-line {
+      position: relative;
+
+      width: 350px;
+      max-width: 70%;
+
+      height: 1px;
+
+      margin-top: 32px;
+      margin-bottom: 46px;
+
+      background: rgba(93, 106, 68, 0.25);
+    }
+
+    .little-ones-line::after {
+      content: "";
+
+      position: absolute;
+
+      width: 25px;
+      height: 1px;
+
+      left: 50%;
+      top: 0;
+
+      transform: translateX(-50%);
+
+      background: #b89956;
+    }
+
+    /* =========================================
+       IMAGE CARD
+    ========================================= */
+
+    .little-ones-card {
+      position: relative;
+
+      width: 380px;
+      max-width: 90vw;
+
+      border-radius: 19px;
+
+      overflow: hidden;
+
+      background: #ded9bd;
+
+      box-shadow:
+        0 10px 25px rgba(55, 65, 38, 0.12),
+        0 2px 8px rgba(55, 65, 38, 0.08);
+    }
+
+    .little-ones-card img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      object-fit: cover;
+    }
+
+    /* =========================================
+       DECORATIVE FRAME OVER IMAGE
+    ========================================= */
+
+    .little-ones-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 17px;
+      left: 17px;
+      right: 17px;
+      bottom: 17px;
+
+      border: 1px solid rgba(255, 255, 255, 0.72);
+
+      border-radius: 2px;
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    /* =========================================
+       SMALL FLOWER DECORATION
+    ========================================= */
+
+    .little-flower {
+      position: absolute;
+
+      font-size: 27px;
+
+      color: #d2e5b6;
+
+      opacity: 0.85;
+
+      z-index: 1;
+
+      pointer-events: none;
+    }
+
+    .flower-one {
+      left: 18%;
+      bottom: 30px;
+
+      transform: rotate(-15deg);
+    }
+
+    .flower-two {
+      right: 12%;
+      top: 35%;
+
+      transform: rotate(20deg);
+
+      opacity: 0.35;
+    }
+
+    /* =========================================
+       RESPONSIVE - TABLET
+    ========================================= */
+
+    @media (max-width: 768px) {
+
+      .little-ones-section {
+        min-height: auto;
+        padding: 30px 15px 45px;
+      }
+
+      .little-ones-subtitle {
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
+
+      .little-ones-title {
+        font-size: 39px;
+      }
+
+      .little-ones-line {
+        margin-top: 25px;
+        margin-bottom: 35px;
+      }
+
+      .little-ones-card {
+        width: 360px;
+      }
+
+    }
+
+    /* =========================================
+       RESPONSIVE - MOBILE
+    ========================================= */
+
+    @media (max-width: 480px) {
+
+      .little-ones-section {
+        padding: 25px 12px 35px;
+      }
+
+      .little-ones-subtitle {
+        font-size: 8px;
+        letter-spacing: 3px;
+      }
+
+      .little-ones-title {
+        font-size: 32px;
+        margin-top: 8px;
+      }
+
+      .little-ones-line {
+        width: 250px;
+        max-width: 75%;
+
+        margin-top: 22px;
+        margin-bottom: 28px;
+      }
+
+      .little-ones-card {
+        width: 340px;
+        max-width: 94vw;
+
+        border-radius: 16px;
+      }
+
+      .little-ones-card::before {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+      }
+
+    }
 

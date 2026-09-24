@@ -277,7 +277,7 @@
       } /* ===================================== BUTTON ===================================== */
       .wedding-button {
         display: inline-block;
-        margin-top: 30px;
+        /* margin-top: 30px; */
         padding: 13px 30px;
         border: 1px solid #c9a227;
         border-radius: 30px;
@@ -332,6 +332,335 @@
       }
 
       /* new */
+
+       
+    :root {
+      --bg-color-1: #fdfbf9;
+      --bg-color-2: #f4eee8;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --gold-main: #c9a227;
+      --gold-light: #e8d288;
+      --text-dark: #4a3b3b;
+      --text-mid: #7a6565;
+      --heart-color: #d68b8b;
+    }
+
+    /* ===================================== BASE STYLES ===================================== */
+    /* * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at center, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      opacity: 0.4;
+    }
+    body::before {
+      width: 400px; height: 400px;
+      background: #fce4e4;
+      top: -100px; left: -100px;
+    }
+    body::after {
+      width: 300px; height: 300px;
+      background: #fff0d4;
+      bottom: -50px; right: -50px;
+    } */
+
+    /* ===================================== LAYOUT ===================================== */
+    .wedding-content {
+      position: relative;
+      z-index: 5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* ===================================== HANGING THALI (ॐ) ===================================== */
+    .thali {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: -15px;
+      z-index: 10;
+    }
+
+    .chain {
+      position: absolute;
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold-main));
+      top: -60px;
+    }
+    .left-chain { transform: rotate(15deg); left: 40%; }
+    .right-chain { transform: rotate(-15deg); right: 40%; }
+
+    .thali-pendant {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #fff, #fdf6e3);
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: var(--gold-main);
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===================================== WEDDING CARD ===================================== */
+    .wedding-card {
+      width: min(750px, 100%);
+      padding: 70px 50px;
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 20px;
+      box-shadow: 
+        0 30px 60px rgba(100, 70, 70, 0.08),
+        inset 0 0 0 10px rgba(255, 255, 255, 0.5),
+        inset 0 0 0 12px rgba(201, 162, 39, 0.15);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle card texture overlay */
+    .wedding-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(var(--gold-main) 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+      opacity: 0.03;
+      pointer-events: none;
+    }
+
+    /* ===================================== TYPOGRAPHY ===================================== */
+    .small-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold-main);
+      margin-bottom: 25px;
+    }
+
+    /* Fixed H1 and Name Styling */
+    h1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-dark);
+    }
+
+    .namez {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.1;
+    }
+
+    .ampersand {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--gold-main);
+      line-height: 0.8;
+      margin: -5px 0;
+      text-shadow: 0 2px 10px rgba(201, 162, 39, 0.2);
+    }
+
+    /* ===================================== DECORATIVE ELEMENTS ===================================== */
+    .heart {
+      font-size: 24px;
+      color: var(--heart-color);
+      margin: 25px 0;
+      animation: heartbeat 2s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); text-shadow: 0 0 10px rgba(214, 139, 139, 0.4); }
+    }
+
+    .divider {
+      width: 150px;
+      height: 2px;
+      margin: 25px auto;
+      background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
+      position: relative;
+    }
+
+    .divider::after {
+      content: '♦';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card-bg);
+      padding: 0 10px;
+      color: var(--gold-main);
+      font-size: 10px;
+    }
+
+    /* ===================================== TEXT DETAILS ===================================== */
+    .date {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .message {
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      max-width: 550px;
+      margin: 0 auto 40px auto;
+      font-style: italic;
+    }
+
+    /* ===================================== BUTTON ===================================== */
+    .wedding-button {
+      display: inline-block;
+      padding: 16px 45px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(135deg, var(--gold-main), #b08d1d);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
+      cursor: pointer;
+    }
+
+    .wedding-button::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .wedding-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(201, 162, 39, 0.4);
+      background: linear-gradient(135deg, #b08d1d, var(--gold-main));
+    }
+
+    .wedding-button:hover::before {
+      left: 100%;
+    }
+
+    /* ===================================== FLOATING HEARTS ===================================== */
+    .hearts-layer {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: var(--heart-color);
+      opacity: 0;
+      font-size: 14px;
+      animation: floatUp 8s infinite linear;
+    }
+
+    .fh1 { left: 10%; bottom: -20px; animation-duration: 7s; animation-delay: 0s; }
+    .fh2 { left: 25%; bottom: -20px; animation-duration: 9s; animation-delay: 2s; font-size: 18px; }
+    .fh3 { left: 50%; bottom: -20px; animation-duration: 6s; animation-delay: 4s; color: var(--gold-light); }
+    .fh4 { left: 75%; bottom: -20px; animation-duration: 10s; animation-delay: 1s; font-size: 12px; }
+    .fh5 { left: 90%; bottom: -20px; animation-duration: 8s; animation-delay: 5s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.6; }
+      80% { opacity: 0.6; }
+      100% { transform: translateY(-100vh) scale(1.5) rotate(20deg); opacity: 0; }
+    }
+
+    /* ===================================== MOBILE OPTIMIZATIONS ===================================== */
+    @media (max-width: 600px) {
+      .wedding-content {
+        /* Changed to flex-start so the ॐ doesn't get cut off on small screens */
+        justify-content: flex-start;
+        /* padding: 80px 15px 40px 15px; */
+      }
+      .wedding-card {
+        padding: 40px 20px;
+        border-radius: 15px;
+      }
+      .small-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+      .namez {
+        font-size: clamp(2.5rem, 9vw, 3.5rem); /* Scaled down for mobile */
+      }
+      .ampersand {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin: -2px 0;
+      }
+      .message {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .date {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      .wedding-button {
+        padding: 14px 30px;
+        font-size: 11px;
+      }
+      .heart {
+        margin: 1px 0;
+      }
+      .divider {
+        margin: 15px auto;
+        width: 100px;
+      }
+    }
       /* ================================
    FLOATING HEARTS
 ================================ */
@@ -386,36 +715,28 @@
 
       /* Floating animation */
 
- 
-@keyframes floatHeart {
+      @keyframes floatHeart {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 0;
+        }
 
-    0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0;
-    }
+        10% {
+          opacity: 0.9;
+        }
 
-    10% {
-        opacity: 0.9;
-    }
+        50% {
+          transform: translateY(-50vh) translateX(40px) scale(1.1);
 
-    50% {
-        transform:
-            translateY(-50vh)
-            translateX(40px)
-            scale(1.1);
+          opacity: 0.8;
+        }
 
-        opacity: 0.8;
-    }
+        100% {
+          transform: translateY(-115vh) translateX(-40px) scale(0.6);
 
-    100% {
-        transform:
-            translateY(-115vh)
-            translateX(-40px)
-            scale(0.6);
-
-        opacity: 0;
-    }
-  }
+          opacity: 0;
+        }
+      }
 
       /* Mobile */
 
@@ -424,6 +745,13 @@
           font-size: 25px;
         }
       }
+      .grid img {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.grid img.fade-out {
+  opacity: 0;
+}
     </style>
   </head>
   <body>
@@ -448,7 +776,15 @@
       <div class="sparkle s5">✦</div>
     </div>
     <!-- ===================================== WEDDING CONTENT ====================================== -->
-    <main class="wedding-content" id="homeSection">
+    <!-- <main class="wedding-content" id="homeSection">
+      <div class="thali">
+    <div class="chain left-chain"></div>
+    <div class="chain right-chain"></div>
+
+    <div class="thali-pendant">
+        ॐ
+    </div>
+</div>
       <div class="wedding-card">
         <div class="small-title">We are inviting you to the Wedding of</div>
         <h1>Jithu &amp; Sethulakshmi</h1>
@@ -460,7 +796,9 @@
           hearts and dreams in their eyes, they are beginning a new chapter
           together.
         </p>
-        <a style="cursor: pointer;" class="wedding-button" onclick="showStory()"> Our Story </a>
+        <a style="cursor: pointer" class="wedding-button" onclick="showStory()">
+          Our Story
+        </a>
       </div>
       <div class="hearts-layer">
         <span class="floating-heart fh1">♥</span>
@@ -469,7 +807,54 @@
         <span class="floating-heart fh4">♥</span>
         <span class="floating-heart fh5">♥</span>
       </div>
-    </main>
+    </main> -->
+    
+  <main class="wedding-content" id="homeSection">
+    
+    <!-- Decorative Thali (ॐ) -->
+    <div class="thali">
+      <div class="chain left-chain"></div>
+      <div class="chain right-chain"></div>
+      <div class="thali-pendant">ॐ</div>
+    </div>
+
+    <!-- Main Invitation Card -->
+    <div class="wedding-card">
+      <div class="small-title">We are inviting you to the Wedding of</div>
+      
+      <!-- Fixed Name Structure using Span tags -->
+      <h1>
+        <span class="namez">Jithu</span>
+        <span class="ampersand">&</span>
+        <span class="namez">Sethulakshmi</span>
+      </h1>
+      
+      <div class="heart">♡</div>
+      <div class="divider"></div>
+      
+      <div class="date">Sunday · 25 October · 2026</div>
+      
+      <p class="message">
+        Two hearts, two lives, and one beautiful journey. With love in their
+        hearts and dreams in their eyes, they are beginning a new chapter
+        together.
+      </p>
+      
+      <a class="wedding-button" onclick="showStory()">
+        Our Story
+      </a>
+    </div>
+
+    <!-- Floating Background Hearts -->
+    <div class="hearts-layer">
+      <span class="floating-heart fh1">♥</span>
+      <span class="floating-heart fh2">♥</span>
+      <span class="floating-heart fh3">♥</span>
+      <span class="floating-heart fh4">♥</span>
+      <span class="floating-heart fh5">♥</span>
+    </div>
+
+  </main>
     <div id="storySection" style="display: none">
       <!-- Story content goes here -->
 
@@ -654,10 +1039,11 @@
               <div class="event-label">Venue</div>
 
               <p class="event-details">
-                CSI Heritage Bungalow<br />
-                Fort Kochi, Kerala
+                Vadakkekkara Arcade Auditorium <br>
+                Opposite Winners Public School <br>
+                Karimannoor, Thodupuzha
               </p>
-              <a href="#" class="map-link"> View on Map </a>
+              <a href="https://maps.app.goo.gl/XXzXLYTkzhqV4gtJ6" class="map-link"> View on Map </a>
             </div>
           </div>
         </section>
@@ -667,13 +1053,13 @@
               <div class="col-lg-7 mb-5 mb-lg-0">
                 <div class="imgs-grid">
                   <div class="grid grid-1">
-                    <img src="23149.jpg.webp" alt="Untree.co" />
+                    <img id="image1" src="23149.jpg.webp" alt="Untree.co" />
                   </div>
                   <div class="grid grid-2">
-                    <img src="jithu.webp" alt="Untree.co" />
+                    <img id="image2" src="jithu.webp" alt="Untree.co" />
                   </div>
                   <div class="grid grid-3">
-                    <img src="kukku2.webp" alt="Untree.co" />
+                    <img id="image3" src="23149.jpg.webp" alt="Untree.co" />
                   </div>
                 </div>
               </div>
@@ -709,9 +1095,116 @@
             </div>
           </div>
         </div>
+
+
+         <section class="little-ones-section">
+
+    <div class="little-ones-subtitle">
+      The Littlest Members Of The Family
+    </div>
+
+    <h2 class="little-ones-title">
+      Wishes from the little ones
+    </h2>
+
+    <div class="little-ones-line"></div>
+
+
+    <!-- Main image -->
+    <div class="little-ones-card">
+
+      <!--
+        Put your pet/wedding image here.
+
+        Example:
+        assets/little-ones.jpg
+      -->
+      <img
+        src="ethal.webp"
+        alt="Wishes from the little ones"
+      >
+
+    </div>
+
+
+    <!-- Small decorative flowers -->
+    <div class="little-flower flower-one">
+      ✿
+    </div>
+
+    <div class="little-flower flower-two">
+      ✿
+    </div>
+
+  </section>
+
       </main>
     </div>
     <script>
+  const imageGroups = [
+    {
+      id: "image1",
+      images: [
+        "jithu.webp",
+        "kukku2.webp",
+        "together.webp",
+      ]
+    },
+    {
+      id: "image2",
+      images: [
+        "us.webp",
+        "seth.webp"
+        
+      ]
+    },
+    {
+      id: "image3",
+      images: [
+        "23149.jpg.webp",
+        "image_we.webp",
+            ]
+    }
+  ];
+
+  const currentIndexes = [0, 0, 0];
+
+  function changeImage(index) {
+    const group = imageGroups[index];
+    const image = document.getElementById(group.id);
+
+    image.classList.add("fade-out");
+
+    setTimeout(() => {
+
+      currentIndexes[index]++;
+
+      if (currentIndexes[index] >= group.images.length) {
+        currentIndexes[index] = 0;
+      }
+
+      image.src = group.images[currentIndexes[index]];
+
+      image.onload = () => {
+        image.classList.remove("fade-out");
+      };
+
+    }, 800);
+  }
+
+  // Change each grid image every 4 seconds
+  setInterval(() => {
+    changeImage(0);
+  }, 4000);
+
+  setInterval(() => {
+    changeImage(1);
+  }, 5000);
+
+  setInterval(() => {
+    changeImage(2);
+  }, 6000);
+
       /*
     ==========================================
        SET YOUR WEDDING DATE HERE
