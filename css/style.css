@@ -953,7 +953,7 @@
         }
 
         .love-text {
-          font-size: 18px;
+          font-size: 20px;
         }
       }
 
@@ -1564,4 +1564,551 @@ body {
         justify-content: flex-start;
         padding: 44px 10px !important;
     }
+}
+/* =========================================
+   WEDDING DETAILS SECTION
+   ========================================= */
+
+.wedding-details-section {
+  position: relative;
+  width: 100%;
+  min-height: 442px;
+  overflow: hidden;
+
+  background: #f1f2df;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.wedding-details-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 900px;
+
+  min-height: 442px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   TOP TEXT
+   ========================================= */
+
+.wedding-top-text {
+  margin: 40px 20px 0;
+
+  color: #43563b;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+
+  line-height: 1.2;
+  text-align: center;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   A & M
+   ========================================= */
+
+.couple-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 72px;
+
+  color: #d3a32c;
+
+  font-family: "Times New Roman", Georgia, serif;
+
+  line-height: 0.8;
+}
+
+
+.couple-initials span {
+  display: inline-block;
+
+  font-size: 98px;
+  font-weight: 400;
+}
+
+
+.couple-initials .ampersand {
+  margin: 0 24px;
+
+  font-size: 78px;
+
+  position: relative;
+  top: -2px;
+}
+
+
+/* =========================================
+   DATE
+   ========================================= */
+
+.wedding-date {
+  margin-top: 39px;
+
+  color: #35452f;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  letter-spacing: 6px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   ENQUIRY TEXT
+   ========================================= */
+
+.wedding-enquiry {
+  margin: 43px 15px 0;
+
+  color: #74796d;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  text-align: center;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================
+   BOTTOM MESSAGE
+   ========================================= */
+
+.wedding-message {
+  margin: 17px 15px 0;
+
+  color: #c79627;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   DECORATIVE ELEMENTS
+   ========================================= */
+
+.decor {
+  position: absolute;
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* Stars */
+
+.decor-star {
+  color: #e2dfba;
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+
+  opacity: 0.85;
+}
+
+
+/* Top/left star */
+
+.star-1 {
+  left: 168px;
+  top: 235px;
+
+  transform: rotate(25deg);
+}
+
+
+/* Far left star */
+
+.star-2 {
+  left: -2px;
+  top: 284px;
+
+  font-size: 25px;
+
+  transform: rotate(-15deg);
+}
+
+
+/* Bottom left star */
+
+.star-3 {
+  left: 74px;
+  bottom: 20px;
+
+  color: #d8cfa2;
+
+  font-size: 29px;
+
+  transform: rotate(15deg);
+}
+
+
+/* Bottom star */
+
+.star-4 {
+  right: 370px;
+  bottom: 10px;
+
+  font-size: 19px;
+
+  opacity: 0.55;
+
+  transform: rotate(20deg);
+}
+
+
+/* =========================================
+   SMALL FLOWERS
+   ========================================= */
+
+.flower {
+  color: #cbd8bd;
+
+  font-size: 27px;
+
+  opacity: 0.7;
+}
+
+
+/* Left middle flower */
+
+.flower-1 {
+  left: 242px;
+  bottom: 57px;
+
+  transform: rotate(8deg);
+}
+
+
+/* Bottom flower */
+
+.flower-2 {
+  right: 372px;
+  bottom: 4px;
+
+  color: #ddd9b5;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .wedding-details-section {
+    min-height: 430px;
+  }
+
+  .wedding-details-content {
+    min-height: 430px;
+  }
+
+
+  .wedding-top-text {
+    margin-top: 42px;
+
+    font-size: 26px;
+
+    padding: 0 15px;
+  }
+
+
+  .couple-initials {
+    margin-top: 58px;
+  }
+
+
+  .couple-initials span {
+    font-size: 76px;
+  }
+
+
+  .couple-initials .ampersand {
+    margin: 0 17px;
+    font-size: 62px;
+  }
+
+
+  .wedding-date {
+    margin-top: 32px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+  }
+
+
+  .wedding-enquiry {
+    margin-top: 38px;
+
+    font-size: 14px;
+  }
+
+
+  .wedding-message {
+    margin-top: 16px;
+
+    font-size: 19px;
+
+    padding: 0 15px;
+  }
+
+
+  .star-1 {
+    left: 30px;
+    top: 230px;
+  }
+
+
+  .star-2 {
+    left: 5px;
+    top: 290px;
+  }
+
+
+  .star-3 {
+    left: 55px;
+    bottom: 20px;
+  }
+
+
+  .flower-1 {
+    left: 15px;
+    bottom: 75px;
+  }
+
+
+  .star-4 {
+    right: 45px;
+    bottom: 12px;
+  }
+
+
+  .flower-2 {
+    right: 25px;
+    bottom: 5px;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .wedding-details-section {
+    min-height: 410px;
+  }
+
+  .wedding-details-content {
+    min-height: 410px;
+  }
+
+
+  .wedding-top-text {
+    margin-top: 35px;
+
+    font-size: 23px;
+  }
+
+
+  .couple-initials {
+    margin-top: 55px;
+  }
+
+
+  .couple-initials span {
+    font-size: 67px;
+  }
+
+
+  .couple-initials .ampersand {
+    margin: 0 13px;
+
+    font-size: 54px;
+  }
+
+
+  .wedding-date {
+    margin-top: 29px;
+
+    font-size: 11px;
+
+    letter-spacing: 3.5px;
+  }
+
+
+  .wedding-enquiry {
+    margin-top: 35px;
+
+    font-size: 13px;
+  }
+
+
+  .wedding-message {
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    max-width: 340px;
+  }
+
+
+  .star-1 {
+    left: 20px;
+    top: 215px;
+
+    font-size: 20px;
+  }
+
+
+  .star-2 {
+    left: 2px;
+    top: 275px;
+
+    font-size: 19px;
+  }
+
+
+  .star-3 {
+    left: 55px;
+    bottom: 14px;
+
+    font-size: 23px;
+  }
+
+
+  .flower-1 {
+    left: 10px;
+    bottom: 65px;
+
+    font-size: 22px;
+  }
+
+
+  .star-4 {
+    right: 35px;
+    bottom: 10px;
+
+    font-size: 16px;
+  }
+
+
+  .flower-2 {
+    right: 20px;
+    bottom: 4px;
+
+    font-size: 17px;
+  }
+}
+
+
+
+.little-ones-note {
+  position: absolute;
+  z-index: 5;
+
+    top: 351px;
+    left: 71%;
+
+  transform: translateX(-50%) rotate(-1deg);
+
+  width: 78%;
+  padding: 23px 18px 21px;
+
+  box-sizing: border-box;
+
+    background: #fffdf1c7;
+
+  color: #464a3d;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+
+  clip-path: polygon(
+    1% 3%,
+    5% 1%,
+    12% 3%,
+    20% 1%,
+    30% 3%,
+    40% 1%,
+    50% 2%,
+    60% 1%,
+    70% 3%,
+    80% 1%,
+    90% 2%,
+    98% 1%,
+    100% 96%,
+    92% 98%,
+    82% 96%,
+    72% 99%,
+    60% 97%,
+    50% 99%,
+    40% 97%,
+    30% 99%,
+    20% 97%,
+    10% 99%,
+    2% 97%
+  );
+}
+
+.little-ones-note::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+  bottom: 7px;
+
+  height: 1px;
+
+  background: rgba(120, 110, 80, 0.08);
 }
