@@ -1499,7 +1499,7 @@
 
 
 <!--  -->
-<script>
+<!-- <script>
     const video = document.getElementById("introVideo");
     const videoIntro = document.getElementById("videoIntro");
     const websiteContent = document.getElementById("storySection");
@@ -1535,7 +1535,50 @@
 
     // Prevent scrolling while the intro video is playing
     document.body.style.overflow = "hidden";
-  </script>
+  </script> -->
   <!--  -->
+  <script>
+const video = document.getElementById("introVideo");
+const videoIntro = document.getElementById("videoIntro");
+const websiteContent = document.getElementById("storySection");
+
+function showWebsite() {
+  if (videoIntro.style.display === "none") {
+    return;
+  }
+
+  video.pause();
+  videoIntro.style.opacity = "0";
+
+  setTimeout(() => {
+    videoIntro.style.display = "none";
+    websiteContent.style.display = "block";
+
+    requestAnimationFrame(() => {
+      websiteContent.classList.add("show");
+    });
+
+    document.body.style.overflow = "auto";
+  }, 1000);
+}
+
+// Show website after video finishes
+video.addEventListener("ended", showWebsite);
+
+// Handle unsupported video or loading failure
+video.addEventListener("error", showWebsite);
+
+// Attempt autoplay for iPhone Safari
+video.muted = true;
+video.playsInline = true;
+
+video.play().catch((error) => {
+  console.log("Intro video could not autoplay:", error);
+  showWebsite();
+});
+
+// Prevent scrolling while the intro is playing
+document.body.style.overflow = "hidden";
+</script>
   </body>
 </html>
