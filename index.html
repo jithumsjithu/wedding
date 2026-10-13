@@ -1538,47 +1538,89 @@
   </script> -->
   <!--  -->
   <script>
-const video = document.getElementById("introVideo");
-const videoIntro = document.getElementById("videoIntro");
-const websiteContent = document.getElementById("storySection");
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("introVideo");
+  const videoIntro = document.getElementById("videoIntro");
+  const websiteContent = document.getElementById("storySection");
 
-function showWebsite() {
-  if (videoIntro.style.display === "none") {
+  if (!video || !videoIntro || !websiteContent) {
+    console.error("Intro video elements were not found.");
     return;
   }
 
-  video.pause();
-  videoIntro.style.opacity = "0";
+  let finished = false;
+  let startupTimer;
+  let stallTimer;
 
-  setTimeout(() => {
-    videoIntro.style.display = "none";
-    websiteContent.style.display = "block";
+  function showWebsite() {
+    if (finished) return;
+    finished = true;
 
-    requestAnimationFrame(() => {
-      websiteContent.classList.add("show");
+    clearTimeout(startupTimer);
+    clearTimeout(stallTimer);
+
+    video.pause();
+    videoIntro.style.opacity = "0";
+
+    setTimeout(function () {
+      videoIntro.style.display = "none";
+      websiteContent.style.display = "block";
+
+      requestAnimationFrame(function () {
+        websiteContent.classList.add("show");
+      });
+
+      document.body.style.overflow = "auto";
+    }, 500);
+  }
+
+  // Open the website if the video fails.
+  video.addEventListener("error", showWebsite);
+  video.addEventListener("abort", showWebsite);
+
+  // If playback gets stuck, open the website.
+  video.addEventListener("waiting", function () {
+    clearTimeout(stallTimer);
+    stallTimer = setTimeout(showWebsite, 5000);
+  });
+
+  video.addEventListener("stalled", function () {
+    clearTimeout(stallTimer);
+    stallTimer = setTimeout(showWebsite, 5000);
+  });
+
+  video.addEventListener("playing", function () {
+    clearTimeout(startupTimer);
+    clearTimeout(stallTimer);
+  });
+
+  video.addEventListener("timeupdate", function () {
+    clearTimeout(stallTimer);
+  });
+
+  video.addEventListener("ended", showWebsite);
+
+  // Never leave visitors stuck on a black screen.
+  startupTimer = setTimeout(showWebsite, 10000);
+
+  video.muted = true;
+  video.playsInline = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.preload = "auto";
+
+  document.body.style.overflow = "hidden";
+
+  const playPromise = video.play();
+
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(function (error) {
+      console.log("Intro video could not play:", error);
+      showWebsite();
     });
-
-    document.body.style.overflow = "auto";
-  }, 1000);
-}
-
-// Show website after video finishes
-video.addEventListener("ended", showWebsite);
-
-// Handle unsupported video or loading failure
-video.addEventListener("error", showWebsite);
-
-// Attempt autoplay for iPhone Safari
-video.muted = true;
-video.playsInline = true;
-
-video.play().catch((error) => {
-  console.log("Intro video could not autoplay:", error);
-  showWebsite();
+  }
 });
-
-// Prevent scrolling while the intro is playing
-document.body.style.overflow = "hidden";
 </script>
+
   </body>
 </html>
