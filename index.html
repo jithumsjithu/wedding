@@ -835,60 +835,59 @@
         opacity: 0;
       }
 
+      /* newwww */
 
+      /* Video Intro Screen */
+      #videoIntro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 1s ease;
+      }
 
+      #introVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-/* newwww */
+      /* Hide website initially */
+      #websiteContent {
+        display: none;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
 
-
-    /* Video Intro Screen */
-    #videoIntro {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 1s ease;
-    }
-
-    #introVideo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Hide website initially */
-    #websiteContent {
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    /* Show website */
-    #websiteContent.show {
-      display: block;
-      opacity: 1;
-    }
-
-
-
+      /* Show website */
+      #websiteContent.show {
+        display: block;
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
-
-<!-- Intro Video -->
-      <div id="videoIntro">
-    <video id="introVideo" autoplay muted playsinline webkit-playsinline preload="metadata">
-      <source src="intro.webm" type="video/webm">
-      Your browser does not support video playback.
-    </video>
-  </div>
-<!--  -->
+    <!-- Intro Video -->
+    <div id="videoIntro">
+      <video
+        id="introVideo"
+        autoplay
+        muted
+        playsinline
+        webkit-playsinline
+        preload="metadata"
+      >
+        <source src="intro.webm" type="video/webm" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+    <!--  -->
     <!-- ===================================== ANIMATED BACKGROUND ====================================== -->
     <div class="wedding-background">
       <!-- Soft glowing circles -->
@@ -987,7 +986,7 @@
         <span class="floating-heart fh7">♥</span>
       </div>
     </main> -->
-    <div id="storySection" style="display: none"> 
+    <div id="storySection" style="display: none">
       <!-- Story content goes here -->
 
       <!-- TOP WEDDING IMAGE -->
@@ -1038,7 +1037,7 @@
               <p class="love-text">
                 <b>
                   Sunday, The Twenty-Fifth Of October,2026 <br />
-                 Sivavilasam NSS Auditorium Karayogam No. 1936 Thekkekkara,
+                  Sivavilasam NSS Auditorium Karayogam No. 1936 Thekkekkara,
                   Karikode</b
                 >
               </p>
@@ -1150,7 +1149,7 @@
 
               <p class="event-details">
                 Sivavilasam NSS Auditorium
-                <br />Karayogam No. 1936 Thekkekkara, <br /> 
+                <br />Karayogam No. 1936 Thekkekkara, <br />
                 Karikode, Dist. Kottayam
               </p>
 
@@ -1192,13 +1191,13 @@
               <div class="col-lg-7 mb-5 mb-lg-0">
                 <div class="imgs-grid">
                   <div class="grid grid-1">
-                    <img id="image1" src="23149.jpg.webp" alt="Untree.co" />
+                    <img id="image1" src="img/pic1.webp" alt="image" />
                   </div>
                   <div class="grid grid-2">
-                    <img id="image2" src="jithu.webp" alt="Untree.co" />
+                    <img id="image2" src="img/image_we.webp" alt="image" />
                   </div>
                   <div class="grid grid-3">
-                    <img id="image3" src="23149.jpg.webp" alt="Untree.co" />
+                    <img id="image3" src="img/pic2.webp" alt="image" />
                   </div>
                 </div>
               </div>
@@ -1253,25 +1252,24 @@
         assets/little-ones.jpg
       -->
             <img src="ethal.webp" alt="Wishes from the little ones" />
-          
-  <!-- <div class="little-ones-card">
+
+            <!-- <div class="little-ones-card">
 
     <img src="ethal.webp" alt="Wishes from the little ones" /> -->
 
-    <!-- Text in front of image -->
-    <div class="little-ones-note">
-      <p>
-        So we're upgrading to a<br>
-        <strong>happy fur-ever family!</strong>
-        <br>
-        Sending all our love for<br>
-        your new life together.
-      </p>
-    </div>
+            <!-- Text in front of image -->
+            <div class="little-ones-note">
+              <p>
+                So we're upgrading to a<br />
+                <strong>happy fur-ever family!</strong>
+                <br />
+                Sending all our love for<br />
+                your new life together.
+              </p>
+            </div>
+          </div>
 
-  </div>
-
-  <!-- </div> -->
+          <!-- </div> -->
 
           <!-- Small decorative flowers -->
           <div class="little-flower flower-one">✿</div>
@@ -1279,67 +1277,85 @@
           <div class="little-flower flower-two">✿</div>
         </section>
 
+        <section class="wedding-details-section">
+          <!-- Decorative elements -->
+          <span class="decor decor-star star-1">✦</span>
+          <span class="decor decor-star star-2">✦</span>
+          <span class="decor decor-star star-3">✦</span>
+          <span class="decor decor-star star-4">✦</span>
 
-<section class="wedding-details-section">
+          <span class="decor flower flower-1">✿</span>
+          <span class="decor flower flower-2">✿</span>
 
-  <!-- Decorative elements -->
-  <span class="decor decor-star star-1">✦</span>
-  <span class="decor decor-star star-2">✦</span>
-  <span class="decor decor-star star-3">✦</span>
-  <span class="decor decor-star star-4">✦</span>
+          <div class="wedding-details-content">
+            <!-- Top text -->
+            <p class="wedding-top-text">
+              We look forward to celebrating with you
+            </p>
 
-  <span class="decor flower flower-1">✿</span>
-  <span class="decor flower flower-2">✿</span>
+            <!-- Couple initials -->
+            <div class="couple-initials">
+              <span>J</span>
+              <span class="ampersand">&amp;</span>
+              <span>S</span>
+            </div>
 
-  <div class="wedding-details-content">
+            <!-- Date -->
+            <div class="wedding-date">
+              25&nbsp;&nbsp;·&nbsp;&nbsp;10&nbsp;&nbsp;·&nbsp;&nbsp;2026
+            </div>
 
-    <!-- Top text -->
-    <p class="wedding-top-text">
-      We look forward to celebrating with you
-    </p>
+            <!-- Enquiry -->
+            <p class="wedding-enquiry">For enquiries: 9961110821</p>
 
-    <!-- Couple initials -->
-    <div class="couple-initials">
-      <span>J</span>
-      <span class="ampersand">&amp;</span>
-      <span>S</span>
-    </div>
-
-    <!-- Date -->
-    <div class="wedding-date">
-      25&nbsp;&nbsp;·&nbsp;&nbsp;10&nbsp;&nbsp;·&nbsp;&nbsp;2026
-    </div>
-
-    <!-- Enquiry -->
-    <p class="wedding-enquiry">
-      For enquiries: 9961110821
-    </p>
-
-    <!-- Bottom message -->
-    <p class="wedding-message">
-      Sharing the happiness, Jishnu &amp; Athira
-    </p>
-
-  </div>
-
-</section>
-
-
+            <!-- Bottom message -->
+            <p class="wedding-message">
+              Sharing the happiness, Jishnu &amp; Athira
+            </p>
+          </div>
+        </section>
       </main>
     </div>
     <script>
       const imageGroups = [
         {
           id: "image1",
-          images: ["jithu.webp", "kukku2.webp", "together.webp"],
+          images: [
+            "img/pic1.webp",
+            "img/pic2.webp",
+            "img/pic5.webp",
+            "img/pic8.webp",
+            "img/pic17.webp",
+            "img/pic14.webp",
+            "img/pic18.webp",
+            "img/pic20.webp",
+          ],
         },
         {
           id: "image2",
-          images: ["us.webp", "seth.webp"],
+          images: [
+            "img/image_we.webp",
+            "img/pic3.webp",
+            "img/pic6.webp",
+            "img/pic9.webp",
+            "img/pic12.webp",
+            "img/pic15.webp",
+            "img/pic11.webp",
+            "img/pic21.webp",
+          ],
         },
         {
           id: "image3",
-          images: ["23149.jpg.webp", "image_we.webp"],
+          images: [
+            "img/pic2.webp",
+            "img/pic4.jpg.webp",
+            "img/pic7.webp",
+            "img/pic10.webp",
+            "img/pic13.webp",
+            "img/pic16.webp",
+            "img/pic19.webp",
+            "img/pic22.webp",
+          ],
         },
       ];
 
@@ -1497,9 +1513,8 @@
       }
     </script>
 
-
-<!--  -->
-<!-- <script>
+    <!--  -->
+    <!-- <script>
     const video = document.getElementById("introVideo");
     const videoIntro = document.getElementById("videoIntro");
     const websiteContent = document.getElementById("storySection");
@@ -1536,91 +1551,90 @@
     // Prevent scrolling while the intro video is playing
     document.body.style.overflow = "hidden";
   </script> -->
-  <!--  -->
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("introVideo");
-  const videoIntro = document.getElementById("videoIntro");
-  const websiteContent = document.getElementById("storySection");
+    <!--  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("introVideo");
+        const videoIntro = document.getElementById("videoIntro");
+        const websiteContent = document.getElementById("storySection");
 
-  if (!video || !videoIntro || !websiteContent) {
-    console.error("Intro video elements were not found.");
-    return;
-  }
+        if (!video || !videoIntro || !websiteContent) {
+          console.error("Intro video elements were not found.");
+          return;
+        }
 
-  let finished = false;
-  let startupTimer;
-  let stallTimer;
+        let finished = false;
+        let startupTimer;
+        let stallTimer;
 
-  function showWebsite() {
-    if (finished) return;
-    finished = true;
+        function showWebsite() {
+          if (finished) return;
+          finished = true;
 
-    clearTimeout(startupTimer);
-    clearTimeout(stallTimer);
+          clearTimeout(startupTimer);
+          clearTimeout(stallTimer);
 
-    video.pause();
-    videoIntro.style.opacity = "0";
+          video.pause();
+          videoIntro.style.opacity = "0";
 
-    setTimeout(function () {
-      videoIntro.style.display = "none";
-      websiteContent.style.display = "block";
+          setTimeout(function () {
+            videoIntro.style.display = "none";
+            websiteContent.style.display = "block";
 
-      requestAnimationFrame(function () {
-        websiteContent.classList.add("show");
+            requestAnimationFrame(function () {
+              websiteContent.classList.add("show");
+            });
+
+            document.body.style.overflow = "auto";
+          }, 500);
+        }
+
+        // Open the website if the video fails.
+        video.addEventListener("error", showWebsite);
+        video.addEventListener("abort", showWebsite);
+
+        // If playback gets stuck, open the website.
+        video.addEventListener("waiting", function () {
+          clearTimeout(stallTimer);
+          stallTimer = setTimeout(showWebsite, 5000);
+        });
+
+        video.addEventListener("stalled", function () {
+          clearTimeout(stallTimer);
+          stallTimer = setTimeout(showWebsite, 5000);
+        });
+
+        video.addEventListener("playing", function () {
+          clearTimeout(startupTimer);
+          clearTimeout(stallTimer);
+        });
+
+        video.addEventListener("timeupdate", function () {
+          clearTimeout(stallTimer);
+        });
+
+        video.addEventListener("ended", showWebsite);
+
+        // Never leave visitors stuck on a black screen.
+        startupTimer = setTimeout(showWebsite, 10000);
+
+        video.muted = true;
+        video.playsInline = true;
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
+        video.preload = "auto";
+
+        document.body.style.overflow = "hidden";
+
+        const playPromise = video.play();
+
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(function (error) {
+            console.log("Intro video could not play:", error);
+            showWebsite();
+          });
+        }
       });
-
-      document.body.style.overflow = "auto";
-    }, 500);
-  }
-
-  // Open the website if the video fails.
-  video.addEventListener("error", showWebsite);
-  video.addEventListener("abort", showWebsite);
-
-  // If playback gets stuck, open the website.
-  video.addEventListener("waiting", function () {
-    clearTimeout(stallTimer);
-    stallTimer = setTimeout(showWebsite, 5000);
-  });
-
-  video.addEventListener("stalled", function () {
-    clearTimeout(stallTimer);
-    stallTimer = setTimeout(showWebsite, 5000);
-  });
-
-  video.addEventListener("playing", function () {
-    clearTimeout(startupTimer);
-    clearTimeout(stallTimer);
-  });
-
-  video.addEventListener("timeupdate", function () {
-    clearTimeout(stallTimer);
-  });
-
-  video.addEventListener("ended", showWebsite);
-
-  // Never leave visitors stuck on a black screen.
-  startupTimer = setTimeout(showWebsite, 10000);
-
-  video.muted = true;
-  video.playsInline = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
-  video.preload = "auto";
-
-  document.body.style.overflow = "hidden";
-
-  const playPromise = video.play();
-
-  if (playPromise && typeof playPromise.catch === "function") {
-    playPromise.catch(function (error) {
-      console.log("Intro video could not play:", error);
-      showWebsite();
-    });
-  }
-});
-</script>
-
+    </script>
   </body>
 </html>
