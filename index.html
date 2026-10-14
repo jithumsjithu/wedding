@@ -1191,7 +1191,7 @@
               <div class="col-lg-7 mb-5 mb-lg-0">
                 <div class="imgs-grid">
                   <div class="grid grid-1">
-                    <img id="image1" src="img/pic2.webp" alt="image"   loading="lazy"
+                    <img id="image1" src="img/pic2.webp" alt="image"  fetchpriority="high"
   decoding="async"/>
                   </div>
                   <div class="grid grid-2">
@@ -1348,42 +1348,133 @@
           ],
         },
       ];
+      
+const currentIndexes = [0, 0, 0];
 
-      const currentIndexes = [0, 0, 0];
+// Cache images that have already been downloaded
+const imageCache = new Map();
 
-      function changeImage(index) {
-        const group = imageGroups[index];
-        const image = document.getElementById(group.id);
+// Preload an image and wait for it to decode
+function preloadImage(src) {
+  if (imageCache.has(src)) {
+    return imageCache.get(src);
+  }
 
-        image.classList.add("fade-out");
+  const promise = new Promise((resolve) => {
+    const img = new Image();
 
-        setTimeout(() => {
-          currentIndexes[index]++;
-
-          if (currentIndexes[index] >= group.images.length) {
-            currentIndexes[index] = 0;
-          }
-
-          image.src = group.images[currentIndexes[index]];
-
-          image.onload = () => {
-            image.classList.remove("fade-out");
-          };
-        }, 800);
+    img.onload = async () => {
+      try {
+        if (img.decode) {
+          await img.decode();
+        }
+      } catch (error) {
+        // Continue if decoding is unavailable
       }
 
-      // Change each grid image every 4 seconds
-      setInterval(() => {
-        changeImage(0);
-      }, 4000);
+      resolve(img);
+    };
 
-      setInterval(() => {
-        changeImage(1);
-      }, 5000);
+    img.onerror = () => {
+      imageCache.delete(src);
+      resolve(null);
+    };
 
-      setInterval(() => {
-        changeImage(2);
-      }, 6000);
+    img.src = src;
+  });
+
+  imageCache.set(src, promise);
+  return promise;
+}
+
+// Prepare the next image before it is needed
+function preloadNextImage(index) {
+  const group = imageGroups[index];
+  const nextIndex =
+    (currentIndexes[index] + 1) % group.images.length;
+
+  return preloadImage(group.images[nextIndex]);
+}
+
+// Rotate an image smoothly
+async function changeImage(index) {
+  const group = imageGroups[index];
+  const image = document.getElementById(group.id);
+
+  if (!image || !group.images.length) return;
+
+  const nextIndex =
+    (currentIndexes[index] + 1) % group.images.length;
+
+  const nextSrc = group.images[nextIndex];
+
+  // Ensure the next image is downloaded and decoded first
+  const nextImage = await preloadImage(nextSrc);
+
+  if (!nextImage || !image.isConnected) return;
+
+  // Fade out only after the next image is ready
+  image.classList.add("fade-out");
+
+  setTimeout(() => {
+    // Display the already-loaded image
+    image.src = nextImage.src;
+    currentIndexes[index] = nextIndex;
+
+    // Fade back in once the image is ready
+    image.classList.remove("fade-out");
+
+    // Start preloading the following image immediately
+    preloadNextImage(index);
+  }, 800);
+}
+
+// Preload the next image in each group immediately
+imageGroups.forEach((group, index) => {
+  preloadNextImage(index);
+});
+
+// Preserve your existing rotation intervals
+setInterval(() => changeImage(0), 4000);
+setInterval(() => changeImage(1), 5000);
+setInterval(() => changeImage(2), 6000);
+
+
+      // const currentIndexes = [0, 0, 0];
+
+      // function changeImage(index) {
+      //   const group = imageGroups[index];
+      //   const image = document.getElementById(group.id);
+
+      //   image.classList.add("fade-out");
+
+      //   setTimeout(() => {
+      //     currentIndexes[index]++;
+
+      //     if (currentIndexes[index] >= group.images.length) {
+      //       currentIndexes[index] = 0;
+      //     }
+
+      //     image.src = group.images[currentIndexes[index]];
+
+      //     image.onload = () => {
+      //       image.classList.remove("fade-out");
+      //     };
+      //   }, 800);
+      // }
+
+      // // Change each grid image every 4 seconds
+      // setInterval(() => {
+      //   changeImage(0);
+      // }, 4000);
+
+      // setInterval(() => {
+      //   changeImage(1);
+      // }, 5000);
+
+      // setInterval(() => {
+      //   changeImage(2);
+      // }, 6000);
 
       /*
     ==========================================

@@ -1103,7 +1103,13 @@
 
         transition: all 0.3s ease;
       }
+.imgs-grid img {
+  transition: opacity 0.8s ease-in-out;
+}
 
+.imgs-grid img.fade-out {
+  opacity: 0;
+}
       .map-link:hover {
         color: #2f412c;
         border-bottom-color: #2f412c;
